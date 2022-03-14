@@ -35,6 +35,7 @@ cat key.pem certificate.pem > mongo.pem
 ./mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem
 
 ./bin/mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=root --mongo-password=123456 --addr 0.0.0.0:3311
+./bin/mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=root --mongo-password=123456 --addr 0.0.0.0:3311
 
 CUBEJS_DB_SSL=true
 CUBEJS_DB_SSL_REJECT_UNAUTHORIZED=false
@@ -73,6 +74,7 @@ https://docs.mongodb.com/bi-connector/master/tutorial/ssl-setup/
 https://mongodb.net.cn/bi-connector/current/reference/mongosqld/
 
 https://stackoverflow.com/questions/58868085/cube-js-error-ssl-is-required-when-using-cleartext-authentication-using-mongod
+https://zhuanlan.zhihu.com/p/96474694
 ```
 
 ```
