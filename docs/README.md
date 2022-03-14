@@ -29,6 +29,8 @@ mysql --enable-cleartext-plugin --protocol tcp -h127.0.0.1 --port 3311 \
   --ssl-key=/path_to_my_certificate_key/mysql.key \
   --ssl-cert=/path_to_my_client_certificate/mysql.crt \
   -p
+  
+openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
 ```
 
 ```shell
@@ -47,7 +49,7 @@ db.createUser(
 mongo -u admin -p
 admin
 
-mongod --auth --port 27017 --dbpath /home/mongodb/data 
+mongod --auth --port 27017 --dbpath /home/mongodb/data
 ```
 
 ```shell
@@ -56,6 +58,8 @@ mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][
 
 https://docs.mongodb.com/bi-connector/master/tutorial/ssl-setup/
 https://mongodb.net.cn/bi-connector/current/reference/mongosqld/
+
+https://stackoverflow.com/questions/58868085/cube-js-error-ssl-is-required-when-using-cleartext-authentication-using-mongod
 ```
 
 ```
