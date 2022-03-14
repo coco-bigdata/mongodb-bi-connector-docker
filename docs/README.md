@@ -55,6 +55,7 @@ https://docs.mongodb.com/manual/reference/connection-string/
 mongodb://[username:password@]host1[:port1][,...hostN[:portN]][/[defaultauthdb][?options]]
 
 https://docs.mongodb.com/bi-connector/master/tutorial/ssl-setup/
+https://mongodb.net.cn/bi-connector/current/reference/mongosqld/
 ```
 
 ```
