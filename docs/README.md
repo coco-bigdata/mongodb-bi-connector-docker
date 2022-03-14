@@ -31,6 +31,11 @@ mysql --enable-cleartext-plugin --protocol tcp -h127.0.0.1 --port 3311 \
   -p
   
 openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
+cat key.pem certificate.pem > mongo.pem
+./mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem
+
+CUBEJS_DB_SSL=true
+CUBEJS_DB_SSL_REJECT_UNAUTHORIZED=false
 ```
 
 ```shell
