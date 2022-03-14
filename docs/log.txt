@@ -9,3 +9,16 @@
 mysql -h127.0.0.1 -uroot -p -P3311
 Enter password:
 ERROR 1759 (HY000): ssl is required when using cleartext authentication
+
+./bin/mongosqld --auth --sslMode=disabled --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=root --mongo-password=123456 --addr 0.0.0.0:3311
+2022-03-14T14:49:14.923+0800 I CONTROL    [initandlisten] mongosqld starting: version=v2.14.4 pid=13637 host=h2.corp.sz.gene.com
+2022-03-14T14:49:14.923+0800 I CONTROL    [initandlisten] git version: df0cf0b57e9aac0ab6d545eee0d4451d11d0c6e9
+2022-03-14T14:49:14.923+0800 I CONTROL    [initandlisten] OpenSSL version OpenSSL 1.0.1e-fips 11 Feb 2013 (built with OpenSSL 1.0.1e 11 Feb 2013)
+2022-03-14T14:49:14.923+0800 I CONTROL    [initandlisten] options: {net: {bindIp: [0.0.0.0], port: 3311}, security: {enabled: true}, mongodb: {net: {uri: "mongodb://127.0.0.1:27017", auth: {username: "root", password: "<protected>"}}}}
+2022-03-14T14:49:14.930+0800 I NETWORK    [initandlisten] waiting for connections at [::]:3311
+2022-03-14T14:49:14.930+0800 I NETWORK    [initandlisten] waiting for connections at /tmp/mysql.sock
+2022-03-14T14:49:14.938+0800 I SCHEMA     [sampler] sampling MongoDB for schema...
+2022-03-14T14:49:14.944+0800 I SCHEMA     [sampler] mapped schema for 2 namespaces: "test" (2): ["delete_me", "test"]
+2022-03-14T14:49:23.955+0800 I NETWORK    [conn1] connection accepted from 127.0.0.1:37560 #1 (1 connection now open)
+2022-03-14T14:49:23.956+0800 E NETWORK    [conn1] handshake error: ERROR 1759 (HY000): ssl is required when using cleartext authentication
+2022-03-14T14:49:23.956+0800 I NETWORK    [conn1] end connection 127.0.0.1:37560 (0 connections now open)

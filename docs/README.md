@@ -11,7 +11,9 @@ sudo docker pull yiluxiangbei/mongodb-bi-connector:v2.14.4
 
 ./bin/mongosqld --logPath /var/log/mongosqld.log --mongo-uri mongodb://admin:admin@127.0.0.1:27017/test --addr 0.0.0.0:3311
 
-./bin/mongosqld --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=admin --mongo-password=admin --addr 0.0.0.0:3311
+./bin/mongosqld --auth --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=admin --mongo-password=admin --addr 0.0.0.0:3311
+./bin/mongosqld --auth --sslMode=disabled --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=admin --mongo-password=admin --addr 0.0.0.0:3311
+./bin/mongosqld --auth --sslMode=disabled --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=root --mongo-password=123456 --addr 0.0.0.0:3311
 mysql -h127.0.0.1 -uroot -p -P3311
 ```
 
