@@ -1,0 +1,7 @@
+2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten] mongosqld starting: version=v2.14.4 pid=11364 host=h2.corp.sz.gene.com
+2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten] git version: df0cf0b57e9aac0ab6d545eee0d4451d11d0c6e9
+2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten] OpenSSL version OpenSSL 1.0.1e-fips 11 Feb 2013 (built with OpenSSL 1.0.1e 11 Feb 2013)
+2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten] options: {systemLog: {path: "/var/log/mongosqld.log"}, net: {bindIp: [0.0.0.0], port: 3311}, mongodb: {net: {uri: "mongodb://root:123456@127.0.0.1:27017/?connect=direct"}}}
+2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten] ** WARNING: Access control is not enabled for mongosqld.
+2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten]
+--mongo-uri may not contain any authentication information
