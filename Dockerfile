@@ -17,7 +17,11 @@ ENV MONGO_USERNAME root
 ENV MONGO_PASSWORD 123456
 ENV LISTEN_PORT 3307
 
+RUN mkdir /home/mongo
+WORKDIR /home/mongo
+COPY mongo.pem .
+
 # Start Everything
 # note: we need to use sh -c "command" to make rsyslog running as deamon too
 RUN service rsyslog start
-CMD sh -c "/mongosqld/bin/mongosqld --auth --mongo-uri mongodb://$MONGODB_HOST:$MONGODB_PORT --mongo-username=$MONGO_USERNAME --mongo-password=$MONGO_PASSWORD --addr 0.0.0.0:$LISTEN_PORT"
+CMD sh -c "/mongosqld/bin/mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem --mongo-uri mongodb://$MONGODB_HOST:$MONGODB_PORT --mongo-username=$MONGO_USERNAME --mongo-password=$MONGO_PASSWORD --addr 0.0.0.0:$LISTEN_PORT"
