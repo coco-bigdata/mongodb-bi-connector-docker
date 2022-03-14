@@ -13,10 +13,11 @@ RUN tar -xvzf bi-connector.tgz && rm bi-connector.tgz && \
 # Setup default environment variables
 ENV MONGODB_HOST mongodb
 ENV MONGODB_PORT 27017
-ENV MONGODB_URL "mongodb://root:123456@mongodb:27017"
+ENV MONGO_USERNAME root
+ENV MONGO_PASSWORD 123456
 ENV LISTEN_PORT 3307
 
 # Start Everything
 # note: we need to use sh -c "command" to make rsyslog running as deamon too
 RUN service rsyslog start
-CMD sh -c "/mongosqld/bin/mongosqld --logPath /var/log/mongosqld.log --mongo-uri $MONGODB_URL --addr 0.0.0.0:$LISTEN_PORT"
+CMD sh -c "/mongosqld/bin/mongosqld --auth --mongo-uri mongodb://$MONGODB_HOST:$MONGODB_PORT --mongo-username=$MONGO_USERNAME --mongo-password=$MONGO_PASSWORD --addr 0.0.0.0:$LISTEN_PORT"
