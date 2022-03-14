@@ -5,3 +5,7 @@
 2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten] ** WARNING: Access control is not enabled for mongosqld.
 2022-03-14T14:01:30.465+0800 I CONTROL    [initandlisten]
 --mongo-uri may not contain any authentication information
+
+mysql -h127.0.0.1 -uroot -p -P3311
+Enter password:
+ERROR 1759 (HY000): ssl is required when using cleartext authentication
