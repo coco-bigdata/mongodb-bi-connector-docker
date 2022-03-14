@@ -35,10 +35,15 @@ cat key.pem certificate.pem > mongo.pem
 ./mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem
 
 ./bin/mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=root --mongo-password=123456 --addr 0.0.0.0:3311
-./bin/mongosqld --auth --sslMode requireSSL --sslPEMKeyFile mongo.pem --sslAllowInvalidCertificates --mongo-uri mongodb://127.0.0.1:27017 --mongo-username=root --mongo-password=123456 --addr 0.0.0.0:3311
 
 CUBEJS_DB_SSL=true
 CUBEJS_DB_SSL_REJECT_UNAUTHORIZED=false
+
+mysql --enable-cleartext-plugin --protocol tcp -h127.0.0.1 --port 3311 \
+  -uroot \
+  --ssl-key=key.pem \
+  --ssl-cert=certificate.pem \
+  -p
 ```
 
 ```shell
